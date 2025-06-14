@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parvez Shaik | C-Suite Technology Executive</title>
+    <!-- Chosen Palette: 'Cool Slate & Sandstone' - A professional and modern theme using a light, sandy background, dark slate for text, and a warm sandstone/gold for highlights. -->
+    <!-- Application Structure Plan: A single-page dashboard design. The structure prioritizes immediate impact for busy executives and recruiters by presenting key quantifiable achievements first, followed by interactive sections for skills and career history. This non-linear, scannable format is more engaging and effective than a traditional PDF, allowing users to quickly access the most relevant information. -->
+    <!-- Visualization & Content Choices: 
+        - Revenue Growth -> Goal: Show change -> Viz: Line Chart (Chart.js) -> Interaction: Hover for details -> Justification: A powerful, immediate visual representation of business impact.
+        - Key Metrics -> Goal: Inform/Impress -> Viz: Large-number "Stat Cards" (HTML/CSS) -> Interaction: Static display -> Justification: Highlights top achievements for quick consumption.
+        - Career History -> Goal: Organize chronologically -> Viz: Interactive Vertical Timeline (HTML/CSS/JS) -> Interaction: Click to expand details -> Justification: More engaging and less overwhelming than a long text block.
+        - Areas of Expertise -> Goal: Categorize skills -> Viz: Interactive Tag Cloud/Grid (HTML/CSS/JS) -> Interaction: Click/hover to highlight -> Justification: Allows for quick scanning of capabilities.
+    -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #FDFDFB;
+            color: #2C3E50;
+        }
+        h1, h2, h3 {
+            font-family: 'Lexend', sans-serif;
+        }
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -31px;
+            top: 5px;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            background-color: #FDFDFB;
+            border: 4px solid #D4AC0D;
+            z-index: 1;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-white/80 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <div>
+                <h1 class="text-2xl font-bold text-slate-800">Parvez Shaik</h1>
+                <p class="text-sm text-slate-600">C-Suite Technology Executive | CEO, CTO, GM</p>
+            </div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#summary" class="text-slate-600 hover:text-[#D4AC0D] transition-colors">Summary</a>
+                <a href="#metrics" class="text-slate-600 hover:text-[#D4AC0D] transition-colors">Impact</a>
+                <a href="#experience" class="text-slate-600 hover:text-[#D4AC0D] transition-colors">Experience</a>
+                <a href="#expertise" class="text-slate-600 hover:text-[#D4AC0D] transition-colors">Expertise</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-6 py-12">
+
+        <!-- Executive Summary Section -->
+        <section id="summary" class="mb-20 text-center">
+            <h2 class="text-4xl font-bold mb-4 text-slate-800">Visionary Technology & Business Leader</h2>
+            <p class="max-w-4xl mx-auto text-lg text-slate-700 leading-relaxed">
+                With over 21 years of progressive leadership, I am a results-driven executive renowned for orchestrating significant top and bottom-line growth through strategic innovation and digital transformation. My expertise lies in P&L management, global team leadership, and market expansion, with a proven ability to define and execute comprehensive business strategies, secure competitive advantages with pioneering secure solutions, and cultivate high-performance cultures. My ongoing EMBA further solidifies a robust foundation in strategic business leadership.
+            </p>
+             <div class="mt-8 flex justify-center items-center space-x-6 text-slate-600">
+                <span>&#9993; parvez.shaik@hotmail.com</span>
+                <span>&#9742; +358-458591844</span>
+                <a href="https://www.linkedin.com/in/parvez-shaik-linkedin-url" target="_blank" class="hover:text-[#D4AC0D] transition-colors">LinkedIn Profile</a>
+            </div>
+        </section>
+
+        <!-- Key Metrics Dashboard Section -->
+        <section id="metrics" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Quantifiable Impact & Leadership Highlights</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-slate-600">This dashboard provides a snapshot of the key results and strategic impact delivered throughout my career. These metrics reflect a consistent ability to drive business growth, lead large-scale teams, and deliver innovative products to the global market.</p>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-[#D4AC0D]">
+                    <p class="text-4xl font-bold text-slate-800">150%</p>
+                    <p class="text-slate-600 mt-2">Revenue Growth<br>($24M to $60M)</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-slate-400">
+                    <p class="text-4xl font-bold text-slate-800">130+</p>
+                    <p class="text-slate-600 mt-2">Global Team Members<br>Managed</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-slate-400">
+                    <p class="text-4xl font-bold text-slate-800">$80M</p>
+                    <p class="text-slate-600 mt-2">Product Portfolio<br>Revenue Contribution</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md border-t-4 border-slate-400">
+                    <p class="text-4xl font-bold text-slate-800">400M+</p>
+                    <p class="text-slate-600 mt-2">Devices Secured<br>with Deployed Tech</p>
+                </div>
+            </div>
+             <div class="bg-white p-6 md:p-10 rounded-lg shadow-md mt-10">
+                <h3 class="text-2xl font-bold text-center mb-6 text-slate-700">Security Division Revenue Growth (2020-2024)</h3>
+                <div class="chart-container">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+             </div>
+        </section>
+
+        <!-- Professional Experience Timeline Section -->
+        <section id="experience" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-12 text-slate-800">Career Journey</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-slate-600">My career spans over two decades, marked by a progression through engineering, project management, and ultimately, executive leadership. This interactive timeline highlights key roles and responsibilities at leading global technology firms. Click on each role to expand and view the detailed achievements.</p>
+            <div class="relative max-w-4xl mx-auto border-l-4 border-slate-200 pl-10 py-4">
+                <!-- Experience Items will be injected here by JS -->
+            </div>
+        </section>
+
+        <!-- Areas of Expertise Section -->
+        <section id="expertise" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-10 text-slate-800">Core Competencies</h2>
+            <p class="text-center max-w-3xl mx-auto mb-12 text-slate-600">My expertise is built on a foundation of deep technical knowledge combined with strategic business acumen. The following areas represent the core pillars of my leadership capability and professional focus. These competencies have been instrumental in driving innovation, operational excellence, and market leadership.</p>
+            <div id="expertise-container" class="flex flex-wrap justify-center gap-3 md:gap-4 text-center">
+                 <!-- Expertise tags will be injected here by JS -->
+            </div>
+        </section>
+
+    </main>
+    
+    <footer class="bg-slate-800 text-white py-6">
+        <div class="container mx-auto px-6 text-center text-sm">
+            <p>&copy; 2025 Parvez Shaik. All Rights Reserved.</p>
+            <p class="mt-2">Interactive portfolio designed to showcase C-Suite leadership capabilities.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Data for the application
+            const experienceData = [
+                {
+                    company: 'Rambus (Security Division)',
+                    location: 'Espoo, Finland',
+                    role: 'Sr. Director of Product Management & Executive Director, Finland',
+                    period: 'Nov 2016 – Present',
+                    details: [
+                        'Provides comprehensive P&L oversight, setting strategic direction and executing growth initiatives for the $60M+ annual revenue security division.',
+                        'Leads a 130-person global engineering and product organization, driving product vision from conception to market leadership.',
+                        'Drives market expansion by spearheading the introduction of new Quantum products and their applications, including the pioneering deployment of the first-in-market PQC Algorithms stack.',
+                        'Architects product portfolio strategy across crypto cores, Root of Trust, PQC, provisioning, and anti-counterfeit technologies.',
+                        'Acts as the legal representative and country manager for the Rambus Finland Branch.'
+                    ]
+                },
+                {
+                    company: 'Rambus',
+                    location: 'Espoo, Finland',
+                    role: 'Director of Engineering and Product (eSW and Security)',
+                    period: 'Dec 2014 – Oct 2016',
+                    details: [
+                        'Directed and mentored a 40-person engineering team, overseeing the full embedded software stack and development of multiple root-of-trust products.',
+                        'Designed and implemented product development strategies that optimized budget, timelines, and significantly enhanced business unit profitability.',
+                        'Successfully defended audits and secured ASIL-B certifications (ISO 26262, ISO 21434, ISO 9001) for two critical products.',
+                         'Managed talent acquisition aligned with organizational targets, encompassing revenue, licensing, resource planning, and budgeting.'
+                    ]
+                },
+                {
+                    company: 'Huawei',
+                    location: 'Helsinki, Finland',
+                    role: 'Senior Project Manager (Security)',
+                    period: 'Apr 2012 – Dec 2014',
+                    details: [
+                        'Headed product security and TEE teams, overseeing the creation and deployment of Secure OS for Huawei mobile phones.',
+                        'Developed innovative security solutions leveraging TEE, ensuring TEE Global Platform compliance.',
+                        'Directed triage and implementation for numerous security CVEs on Huawei mobile devices and filed three patents for ML designs.'
+                    ]
+                },
+                {
+                    company: 'Trustonic',
+                    location: 'Helsinki, Finland',
+                    role: 'Project Manager (eSW Security)',
+                    period: 'Apr 2012 – Dec 2014',
+                    details: [
+                        'Deployed security OS on high-volume commercial devices for major customers like Samsung, contributing to integration in over 400M devices.',
+                        'Served as the primary interface between Samsung R&D teams (Korea) and Trustonic, analyzing requirements and designing solutions.',
+                        'Expanded the team from a few engineers to multiple QA and development teams.'
+                    ]
+                },
+                {
+                    company: 'Additional Experience',
+                    location: 'Finland & India',
+                    role: 'Scrum Master, Security & QA Lead, Backend Engineer',
+                    period: '2004 – 2012',
+                    details: [
+                        'Scrum Master (Secure Firmware) at Symphony Teleca, Helsinki, Finland (Dec 2011 – Apr 2012)',
+                        'Meego Security (Error Management & Integration) at Symphony Teleca, Helsinki, Finland (Nov 2010 – Dec 2011)',
+                        'Quality Assurance Lead at Wipro, Finland & India (Aug 2004 – Nov 2010)',
+                        'Backend Engineer at Tata Indicom, Warangal, India (Apr 2004 – Aug 2004)'
+                    ]
+                }
+            ];
+
+            const expertiseData = [
+                'Corporate Strategy', 'P&L Management', 'Market Expansion', 'Revenue Generation', 'Digital Transformation', 'Post-Quantum Cryptography', 'R&D Leadership', 'AI/ML Integration', 'Operational Excellence', 'Cost Control', 'Risk Mitigation', 'Agile Methodologies', 'Global Team Management', 'Automotive Cybersecurity', 'Hardware Root of Trust (RoT)', 'Security Ecosystems'
+            ];
+
+            // Populate Experience Timeline
+            const timelineContainer = document.querySelector('.relative.max-w-4xl.mx-auto');
+            experienceData.forEach(item => {
+                const div = document.createElement('div');
+                div.className = 'timeline-item relative mb-8 pl-8 cursor-pointer';
+                div.innerHTML = `
+                    <div class="bg-white p-6 rounded-lg shadow-md transition-all duration-300 hover:shadow-xl hover:scale-[1.02]">
+                        <p class="text-sm font-semibold text-[#D4AC0D]">${item.period}</p>
+                        <h3 class="text-xl font-bold text-slate-800 mt-1">${item.role}</h3>
+                        <p class="text-slate-600">${item.company} - ${item.location}</p>
+                        <div class="details hidden mt-4 text-slate-600 space-y-2">
+                            ${item.details.map(d => `<div>• ${d}</div>`).join('')}
+                        </div>
+                    </div>
+                `;
+                timelineContainer.appendChild(div);
+            });
+            
+            // Populate Expertise Tags
+            const expertiseContainer = document.getElementById('expertise-container');
+            expertiseData.forEach(expertise => {
+                const tag = document.createElement('span');
+                tag.className = 'bg-white text-slate-700 px-4 py-2 rounded-full shadow-sm cursor-default text-sm md:text-base font-medium border border-slate-200 hover:bg-[#D4AC0D] hover:text-white transition-colors';
+                tag.textContent = expertise;
+                expertiseContainer.appendChild(tag);
+            });
+
+
+            // Timeline item click functionality
+            document.querySelectorAll('.timeline-item').forEach(item => {
+                item.addEventListener('click', () => {
+                    const details = item.querySelector('.details');
+                    details.classList.toggle('hidden');
+                });
+            });
+
+            // Smooth scrolling for nav links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+            
+            // Chart.js Revenue Chart
+            const ctx = document.getElementById('revenueChart').getContext('2d');
+            const revenueChart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: ['2020', '2021', '2022', '2023', '2024'],
+                    datasets: [{
+                        label: 'Annual Revenue ($M)',
+                        data: [24, 35, 42, 51, 60],
+                        backgroundColor: 'rgba(212, 172, 13, 0.1)',
+                        borderColor: '#D4AC0D',
+                        borderWidth: 3,
+                        pointBackgroundColor: '#D4AC0D',
+                        pointHoverRadius: 7,
+                        pointHoverBorderColor: 'white',
+                        tension: 0.4,
+                        fill: true,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: {
+                            beginAtZero: false,
+                            ticks: {
+                                callback: function(value, index, values) {
+                                    return '$' + value + 'M';
+                                },
+                                color: '#2C3E50'
+                            },
+                            grid: {
+                                color: '#e2e8f0'
+                            }
+                        },
+                        x: {
+                             ticks: {
+                                color: '#2C3E50'
+                            },
+                            grid: {
+                                display: false
+                            }
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            enabled: true,
+                            backgroundColor: '#2C3E50',
+                            titleFont: {
+                                size: 14,
+                                weight: 'bold',
+                                family: "'Lexend', sans-serif"
+                            },
+                            bodyFont: {
+                                size: 12,
+                                family: "'Inter', sans-serif"
+                            },
+                            callbacks: {
+                                label: function(context) {
+                                    return ` Revenue: $${context.parsed.y}M`;
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
